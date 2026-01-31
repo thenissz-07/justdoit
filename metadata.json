@@ -1,0 +1,7 @@
+{
+  "name": "LevelUp English: A2 to B1",
+  "description": "A comprehensive 30-day intensive program designed to elevate your English proficiency from A2 to B1 level using AI-powered tutoring and a structured curriculum.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
