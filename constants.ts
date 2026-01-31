@@ -3,28 +3,28 @@ import { DayLesson, LessonCategory } from './types';
 
 export const CURRICULUM: DayLesson[] = Array.from({ length: 30 }, (_, i) => {
   const day = i + 1;
-  
-  // Categorization logic for a structured month
   const week = Math.floor(i / 7) + 1;
-  
-  const weeklyThemes = [
-    "Building Foundations (Daily Life)",
-    "Work & Ambition",
-    "Social Issues & Opinions",
-    "Advanced Communication & Exam Prep",
-    "Final Review"
+
+  const techTopics = [
+    "Explaining Logic", "Code Documentation", "Daily Standups", 
+    "Bug Reports", "API Documentation", "Pull Request Reviews",
+    "Technical Interviews", "System Design Discussions"
   ];
 
   return {
     day,
     title: `Day ${day}: ${day % 7 === 0 ? 'Weekly Review' : 'Level Up Practice'}`,
-    objective: `Master B1 level ${day % 3 === 0 ? 'complex sentence structures' : 'topic-specific vocabulary'}.`,
+    objective: day % 5 === 0 
+      ? `Master B1 technical English for ${techTopics[Math.floor(day/5) % techTopics.length]}.`
+      : `Master B1 level ${day % 3 === 0 ? 'complex sentence structures' : 'topic-specific vocabulary'}.`,
     tasks: [
       {
         id: `d${day}-t1`,
-        category: LessonCategory.GRAMMAR,
-        title: day <= 7 ? "Present Perfect vs Simple Past" : "Conditionals & Future Forms",
-        description: "Study the rules and complete 10 practice sentences.",
+        category: day % 5 === 0 ? LessonCategory.TECHNICAL : LessonCategory.GRAMMAR,
+        title: day % 5 === 0 ? `Describing ${techTopics[Math.floor(day/5) % techTopics.length]}` : (day <= 7 ? "Present Perfect vs Simple Past" : "Conditionals & Future Forms"),
+        description: day % 5 === 0 
+          ? `Learn how to explain this technical concept using B1 transition words like 'furthermore' and 'consequently'.`
+          : "Study the rules and complete 10 practice sentences.",
         completed: false
       },
       {

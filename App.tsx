@@ -7,9 +7,10 @@ import LessonDetail from './components/LessonDetail';
 import TutorChat from './components/TutorChat';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
+import Tools from './components/Tools';
 
 const App: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'lesson' | 'tutor'>('dashboard');
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'lesson' | 'tutor' | 'tools'>('dashboard');
   const [progress, setProgress] = useState<UserProgress>(() => {
     const saved = localStorage.getItem('levelup_progress');
     return saved ? JSON.parse(saved) : {
@@ -54,6 +55,8 @@ const App: React.FC = () => {
                />;
       case 'tutor':
         return <TutorChat />;
+      case 'tools':
+        return <Tools />;
       default:
         return <Dashboard progress={progress} onSelectDay={selectDay} />;
     }

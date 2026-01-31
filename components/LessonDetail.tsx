@@ -17,6 +17,8 @@ const LessonDetail: React.FC<LessonDetailProps> = ({ lesson, completedTasks, onT
       case LessonCategory.READING: return 'fa-book-open text-orange-500 bg-orange-50';
       case LessonCategory.LISTENING: return 'fa-headphones text-pink-500 bg-pink-50';
       case LessonCategory.SPEAKING: return 'fa-comment text-emerald-500 bg-emerald-50';
+      case LessonCategory.TECHNICAL: return 'fa-code text-indigo-500 bg-indigo-50';
+      default: return 'fa-book text-slate-500 bg-slate-50';
     }
   };
 
@@ -87,7 +89,7 @@ const LessonDetail: React.FC<LessonDetailProps> = ({ lesson, completedTasks, onT
                   : 'bg-slate-100 text-slate-300 hover:bg-blue-100 hover:text-blue-500'
               }`}
             >
-              <i className={`fa-solid ${completedTasks.includes(task.id) ? 'fa-check' : 'fa-check'}`}></i>
+              <i className={`fa-solid fa-check`}></i>
             </button>
           </div>
         ))}

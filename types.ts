@@ -4,7 +4,8 @@ export enum LessonCategory {
   VOCABULARY = 'Vocabulary',
   READING = 'Reading',
   LISTENING = 'Listening',
-  SPEAKING = 'Speaking'
+  SPEAKING = 'Speaking',
+  TECHNICAL = 'Technical English'
 }
 
 export interface Task {

@@ -11,7 +11,8 @@ const Header: React.FC<HeaderProps> = ({ activeTab, progress }) => {
   const titles: Record<string, string> = {
     dashboard: "My 30-Day Roadmap",
     lesson: "Daily Training",
-    tutor: "AI Tutor Practice"
+    tutor: "AI Tutor Practice",
+    tools: "Developer Tools (.py & .exe)"
   };
 
   const percentage = Math.round((progress.completedTasks.length / 90) * 100);

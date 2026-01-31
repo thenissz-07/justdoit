@@ -2,8 +2,8 @@
 import React from 'react';
 
 interface SidebarProps {
-  activeTab: 'dashboard' | 'lesson' | 'tutor';
-  setActiveTab: (tab: 'dashboard' | 'lesson' | 'tutor') => void;
+  activeTab: 'dashboard' | 'lesson' | 'tutor' | 'tools';
+  setActiveTab: (tab: 'dashboard' | 'lesson' | 'tutor' | 'tools') => void;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
@@ -11,6 +11,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => {
     { id: 'dashboard', icon: 'fa-gauge-high', label: 'Roadmap' },
     { id: 'lesson', icon: 'fa-book-open', label: 'Today\'s Lesson' },
     { id: 'tutor', icon: 'fa-robot', label: 'AI Tutor' },
+    { id: 'tools', icon: 'fa-terminal', label: 'Tech Tools (.py)' },
   ];
 
   return (
